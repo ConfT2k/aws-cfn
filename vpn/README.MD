@@ -12,14 +12,14 @@ pTu1Psk=PqAwSeSrWtOyRyD
 pTu1CgwOutsideIp=54.180.213.90
 pTu1VgwOutsideIp=3.69.86.199
 pTu1CgwInsideIp=169.254.100.2
-pTu1VgwIntsideIp=169.254.100.1
+pTu1VgwInsideIp=169.254.100.1
 
 # IPSec Tunnel #2 Info
 pTu2Psk=PqAwSeSrWtOyRyD
 pTu2CgwOutsideIp=54.180.213.90
 pTu2VgwOutsideIp=3.120.101.10
 pTu2CgwInsideIp=169.254.200.2
-pTu2VgwIntsideIp=169.254.200.1
+pTu2VgwInsideIp=169.254.200.1
 
 # BGP Info
 pCgwAsn=64582
