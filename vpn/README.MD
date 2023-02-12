@@ -25,7 +25,6 @@ pTu2VgwIntsideIp=169.254.200.1
 pCgwAsn=64582
 pVgwAsn=65049
 pCgwCidr=172.19.19.0/4
-
 ```
 
 ## 1. IPSec 설정 (StrongSwan)
