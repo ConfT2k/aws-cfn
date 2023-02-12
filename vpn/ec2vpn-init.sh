@@ -27,18 +27,23 @@ pTu2CgwOutsideIp=$pCgwEip
 pTu2CgwInsideIp=169.254.200.2
 pTu2VgwInsideIp=169.254.200.1
 
-echo "=========================================================="
-echo "              IPSEC/BGP 설정을 시작합니다"
-echo "----------------------------------------------------------"
-echo "  1. IPSec Info - VGW의 Tunnel Outside IP 주소를 입력하세요"
+echo    "=========================================================="
+echo    "              IPSEC/BGP 설정을 시작합니다"
+echo    "----------------------------------------------------------"
+echo    "  1. IPSec Info - VGW의 Tunnel Outside IP 주소를 입력하세요"
 read -p "    - Tunnel #1 Outside IP Addr : " pTu1VgwOutsideIp
 read -p "    - Tunnel #2 Outside IP Addr : " pTu2VgwOutsideIp
-echo "----------------------------------------------------------"
-echo "  2. BGP Info -  BGP 설정 정보를 입력하세요"
+echo    "    - Tunnel #1 Inside IP Addr : "  ${pTu1VgwInsideIp}
+echo    "    - Tunnel #2 Inside IP Addr : "  ${pTu2VgwInsideIp}
+echo    "    - Tunnel #1 Pre-Shared Key  : " ${pTu1Psk}
+echo    "    - Tunnel #2 Pre-Shared Key  : " ${pTu2Psk}
+echo    "----------------------------------------------------------"
+echo    "  2. BGP Info -  BGP 설정 정보를 입력하세요"
 read -p "    - VGW ASN Number (64512-65534) : " pVgwAsn
 read -p "    - CGW ASN Number (64512-65534) : " pCgwAsn
-echo "=========================================================="
-read -p "  위에 입력한 정보가 정확한 가요?  맞으면 계속 (y/N)? " answer
+echo    "=========================================================="
+echo    ""
+read -p "  [!] 위에 입력한 정보가 정확한 가요? 맞으면 계속 (y/N)? " answer
 echo
 
 if [ "${answer,,}" != "y" ]
