@@ -1,4 +1,6 @@
-# StrongSwan + Quaaga setup
+# Site-to-Site VPN 설정 (StrongSwan+Quagga)
+
+# 1. IPSec 설정 (StrongSwan)
 
 ## 1.1 StrongSwan 설치
 
@@ -178,12 +180,12 @@ EOF
 sudo chmod +x /etc/strongswan/ipsec-vti.sh
 ```
 
-### 1.3 IPSec 실행
+## 1.3 IPSec 실행
 ```
 sudo systemctl enable --now strongswan
 ```
 
-### 1.4 IPSec 연결 확인
+## 1.4 IPSec 연결 확인
 ```
 strongswan statusall
 ```
@@ -224,10 +226,9 @@ Security Associations (2 up, 0 connecting):
 [root@CGW ~]#
 ```
 
-## 2. BGP 설치
+# 2. BGP 설정 (Quagga)
 
-
-### 2.1 Quagga 설치
+## 2.1 Quagga 설치
 
 ```
 sudo yum update -y
@@ -236,7 +237,7 @@ sudo yum install quagga-0.99.22.4 -y
 
 ```
 
-### 2.2 Quagga(BGPD) 설정
+## 2.2 Quagga(BGPD) 설정
 
 ```
 cat <<EOF > /etc/quagga/bgpd.conf
@@ -252,7 +253,7 @@ network ${pCgwCidr}
 EOF
 ```
 
-### 2.3 Quagga(BGPD) 실행
+## 2.3 Quagga(BGPD) 실행
 ```
 sudo systemctl start zebra
 sudo systemctl enable zebra
@@ -261,7 +262,7 @@ sudo systemctl enable bgpd
 sudo chmod -R 777 /etc/quagga/
 ```
 
-### 2.3 BGP 연결 확인 - vtysh
+## 2.3 BGP 연결 확인
 
 ```
 [root@CGW ec2-user]# vtysh
