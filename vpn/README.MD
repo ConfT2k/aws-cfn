@@ -294,6 +294,7 @@ C>* 169.254.100.0/30 is directly connected, vti1
 K>* 169.254.169.254/32 is directly connected, eth0
 C>* 169.254.200.0/30 is directly connected, vti2
 C>* 172.19.19.0/28 is directly connected, eth0
+
 ip-172-19-19-10.ap-northeast-2.compute.internal# sh ip bgp
 BGP table version is 0, local router ID is 169.254.100.2
 Status codes: s suppressed, d damped, h history, * valid, > best, i - internal,
@@ -307,7 +308,6 @@ Origin codes: i - IGP, e - EGP, ? - incomplete
 *>                  169.254.200.1          100             0 65049 i
 *  10.49.2.0/24     169.254.100.1          100             0 65049 i
 *>                  169.254.200.1          100             0 65049 i
-*> 172.19.10.0/24   0.0.0.0                  0         32768 i
 *> 172.19.19.0/24   0.0.0.0                  0         32768 i
 
 Total number of prefixes 5
