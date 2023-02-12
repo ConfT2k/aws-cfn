@@ -250,8 +250,8 @@ cat <<EOF > /etc/quagga/bgpd.conf
 router bgp ${pCgwAsn}
 
 bgp router-id 169.254.100.2
-neighbor 169.254.100.1 remote-as ${pVgwAsn}
-neighbor 169.254.200.1 remote-as ${pVgwAsn}
+neighbor ${pTu1VgwInsideIp} remote-as ${pVgwAsn}
+neighbor ${pTu2VgwInsideIp} remote-as ${pVgwAsn}
 network ${pCgwCidr}
 EOF
 ```
