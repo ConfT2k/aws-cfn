@@ -29,7 +29,11 @@ pCgwAsn=64582
 pVgwAsn=65049
 pCgwCidr=172.19.19.0/4
 
+```
 
+### ipsec.conf 설정
+
+```
 cat <<EOF > /etc/strongswan/ipsec.conf
 #
 # /etc/strongswan/ipsec.conf
@@ -92,7 +96,11 @@ conn TU2
         
 EOF
 
+```
 
+### ipsec.secrets 설정
+
+```
 cat <<EOF > /etc/strongswan/ipsec.secrets
 #
 # /etc/strongswan/ipsec.secrets
@@ -101,6 +109,11 @@ ${pTu1CgwOutsideIp} ${pTu1VgwOutsideIp} : PSK ${pTu1Psk}
 ${pTu2CgwOutsideIp} ${pTu2VgwOutsideIp} : PSK ${pTu2Psk}
 EOF
 
+```
+
+### ipsec-vti.sh 설정
+
+```
 cat <<EOF > /etc/strongswan/ipsec-vti.sh
 #!/bin/bash
 #
@@ -154,15 +167,27 @@ sysctl -w net.ipv4.conf.eth0.disable_policy=1
 
 EOF
 
+sudo chmod +x /etc/strongswan/ipsec-vti.sh
+
+
 ```
 
 ## BGP 설치
+
+```
+
+### Quagga 설치
 
 ```
 sudo yum update -y
 sudo yum install quagga-0.99.22.4 -y
 
 
+```
+
+### Quagga(BGPD) 설정
+
+```
 cat <<EOF > /etc/quagga/bgpd.conf
 #
 # /etc/quagga/bgpd.conf
