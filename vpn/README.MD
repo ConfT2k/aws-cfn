@@ -194,39 +194,38 @@ strongswan statusall
 ```
 결과 예제
 ```
-[root@CGW ~]# strongswan statusall
-Status of IKE charon daemon (strongSwan 5.7.2, Linux 5.10.157-139.675.amzn2.x86_64, x86_64):
-  uptime: 9 minutes, since Dec 18 12:03:28 2022
-  malloc: sbrk 2842624, mmap 0, used 1069088, free 1773536
-  worker threads: 11 of 16 idle, 5/0/0/0 working, job queue: 0/0/0/0, scheduled: 10
+h-4.2$ sudo strongswan statusall
+Status of IKE charon daemon (strongSwan 5.7.2, Linux 5.10.165-143.735.amzn2.x86_64, x86_64):
+  uptime: 25 hours, since Feb 11 02:27:21 2023
+  malloc: sbrk 2961408, mmap 0, used 1188400, free 1773008
+  worker threads: 11 of 16 idle, 5/0/0/0 working, job queue: 0/0/0/0, scheduled: 8
   loaded plugins: charon pkcs11 tpm aesni aes des rc2 sha2 sha1 md4 md5 mgf1 random nonce x509 revocation constraints acert pubkey pkcs1 pkcs7 pkcs8 pkcs12 pgp dnskey sshkey pem openssl gcrypt fips-prf gmp curve25519 chapoly xcbc cmac hmac ctr ccm gcm curl attr kernel-netlink resolve socket-default farp stroke vici updown eap-identity eap-sim eap-aka eap-aka-3gpp eap-aka-3gpp2 eap-md5 eap-gtc eap-mschapv2 eap-dynamic eap-radius eap-tls eap-ttls eap-peap xauth-generic xauth-eap xauth-pam xauth-noauth dhcp led duplicheck unity counters
 Listening IP addresses:
-  172.16.81.4
+  172.19.19.10
   169.254.100.2
   169.254.200.2
 Connections:
-         TU1:  172.16.81.4...13.208.136.177  IKEv1, dpddelay=10s
-         TU1:   local:  [13.208.48.253] uses pre-shared key authentication
-         TU1:   remote: [13.208.136.177] uses pre-shared key authentication
-         TU1:   child:  0.0.0.0/0 ::/0 === 0.0.0.0/0 ::/0 TUNNEL, dpdaction=restart
-         TU2:  172.16.81.4...15.152.124.140  IKEv1, dpddelay=10s
-         TU2:   local:  [13.208.48.253] uses pre-shared key authentication
-         TU2:   remote: [15.152.124.140] uses pre-shared key authentication
-         TU2:   child:  0.0.0.0/0 ::/0 === 0.0.0.0/0 ::/0 TUNNEL, dpdaction=restart
+         TU1:  172.19.19.10...3.69.86.199  IKEv1, dpddelay=10s
+         TU1:   local:  [54.180.213.90] uses pre-shared key authentication
+         TU1:   remote: [3.69.86.199] uses pre-shared key authentication
+         TU1:   child:  0.0.0.0/0 === 0.0.0.0/0 TUNNEL, dpdaction=restart
+         TU2:  172.19.19.10...3.120.101.10  IKEv1, dpddelay=10s
+         TU2:   local:  [54.180.213.90] uses pre-shared key authentication
+         TU2:   remote: [3.120.101.10] uses pre-shared key authentication
+         TU2:   child:  0.0.0.0/0 === 0.0.0.0/0 TUNNEL, dpdaction=restart
 Security Associations (2 up, 0 connecting):
-         TU2[2]: ESTABLISHED 9 minutes ago, 172.16.81.4[13.208.48.253]...15.152.124.140[15.152.124.140]
-         TU2[2]: IKEv1 SPIs: fb982a7466cd2932_i* d3bef376d4ae6e5a_r, rekeying in 7 hours
-         TU2[2]: IKE proposal: AES_CBC_128/HMAC_SHA1_96/PRF_HMAC_SHA1/MODP_1024
-         TU2{2}:  INSTALLED, TUNNEL, reqid 2, ESP in UDP SPIs: c3ce6aaf_i c1849cad_o
-         TU2{2}:  AES_CBC_128/HMAC_SHA1_96/MODP_1024, 7751 bytes_i, 6725 bytes_o (104 pkts, 6s ago), rekeying in 36 minutes
-         TU2{2}:   0.0.0.0/0 === 0.0.0.0/0
-         TU1[1]: ESTABLISHED 9 minutes ago, 172.16.81.4[13.208.48.253]...13.208.136.177[13.208.136.177]
-         TU1[1]: IKEv1 SPIs: 101a950f3e59f54c_i* a2f071a5fe731d8c_r, rekeying in 7 hours
-         TU1[1]: IKE proposal: AES_CBC_128/HMAC_SHA1_96/PRF_HMAC_SHA1/MODP_1024
-         TU1{1}:  INSTALLED, TUNNEL, reqid 1, ESP in UDP SPIs: c103084b_i c8f6d27a_o
-         TU1{1}:  AES_CBC_128/HMAC_SHA1_96/MODP_1024, 5255 bytes_i, 7920 bytes_o (126 pkts, 5s ago), rekeying in 35 minutes
-         TU1{1}:   0.0.0.0/0 === 0.0.0.0/0
-[root@CGW ~]#
+         TU2[10]: ESTABLISHED 2 hours ago, 172.19.19.10[54.180.213.90]...3.120.101.10[3.120.101.10]
+         TU2[10]: IKEv1 SPIs: 7c77d78ab9eef6bd_i* 708be1a3b210dd85_r, rekeying in 5 hours
+         TU2[10]: IKE proposal: AES_CBC_128/HMAC_SHA1_96/PRF_HMAC_SHA1/MODP_1024
+         TU2{69}:  INSTALLED, TUNNEL, reqid 2, ESP in UDP SPIs: c0d40c9f_i cec9b0fe_o
+         TU2{69}:  AES_CBC_128/HMAC_SHA1_96/MODP_1024, 21793190 bytes_i, 170821 bytes_o (3219 pkts, 5s ago), rekeying in 17 minutes
+         TU2{69}:   0.0.0.0/0 === 0.0.0.0/0
+         TU1[9]: ESTABLISHED 2 hours ago, 172.19.19.10[54.180.213.90]...3.69.86.199[3.69.86.199]
+         TU1[9]: IKEv1 SPIs: 75bec5eb3e24fd75_i* 76585525753ddde7_r, rekeying in 5 hours
+         TU1[9]: IKE proposal: AES_CBC_128/HMAC_SHA1_96/PRF_HMAC_SHA1/MODP_1024
+         TU1{70}:  INSTALLED, TUNNEL, reqid 1, ESP in UDP SPIs: c986e398_i cc589d58_o
+         TU1{70}:  AES_CBC_128/HMAC_SHA1_96/MODP_1024, 10904720 bytes_i, 18204 bytes_o (296 pkts, 5s ago), rekeying in 22 minutes
+         TU1{70}:   0.0.0.0/0 === 0.0.0.0/0
 ```
 
 
@@ -269,111 +268,49 @@ sudo chmod -R 777 /etc/quagga/
 ### 2.3 BGP 연결 확인
 
 ```
-[root@CGW ec2-user]# vtysh
-CGW# sh ip route
+sh-4.2$ sudo vtysh
+ip-172-19-19-10.ap-northeast-2.compute.internal# sh ip route
+ip-172-19-19-10.ap-northeast-2.compute.internal# sh ip bgp
+
 ```
 
 결과 예제
 ```
-[root@CGW ec2-user]# vtysh
+sh-4.2$ **sudo vtysh**
 
 Hello, this is Quagga (version 0.99.22.4).
 Copyright 1996-2005 Kunihiro Ishiguro, et al.
 
-CGW# sh ip route
+ip-172-19-19-10.ap-northeast-2.compute.internal# **sh ip ro**
 Codes: K - kernel route, C - connected, S - static, R - RIP,
        O - OSPF, I - IS-IS, B - BGP, A - Babel,
        > - selected route, * - FIB route
 
-K>* 0.0.0.0/0 via 172.16.81.1, eth0
-B>* 10.81.0.0/16 [20/100] via 169.254.200.1, vti2, 00:00:19
+K>* 0.0.0.0/0 via 172.19.19.1, eth0
+B>* 10.49.0.0/24 [20/100] via 169.254.200.1, vti2, 1d01h48m
+B>* 10.49.1.0/24 [20/100] via 169.254.200.1, vti2, 1d01h48m
+B>* 10.49.2.0/24 [20/100] via 169.254.200.1, vti2, 1d01h48m
 C>* 127.0.0.0/8 is directly connected, lo
 C>* 169.254.100.0/30 is directly connected, vti1
 K>* 169.254.169.254/32 is directly connected, eth0
 C>* 169.254.200.0/30 is directly connected, vti2
-C>* 172.16.81.0/28 is directly connected, eth0
-CGW# sh ip bgp
+C>* 172.19.19.0/28 is directly connected, eth0
+ip-172-19-19-10.ap-northeast-2.compute.internal# **sh ip bgp**
 BGP table version is 0, local router ID is 169.254.100.2
 Status codes: s suppressed, d damped, h history, * valid, > best, i - internal,
               r RIB-failure, S Stale, R Removed
 Origin codes: i - IGP, e - EGP, ? - incomplete
 
    Network          Next Hop            Metric LocPrf Weight Path
-*  10.81.0.0/16     169.254.100.1          100             0 64512 i
-*>                  169.254.200.1          100             0 64512 i
-*> 172.16.81.0/24   0.0.0.0                  0         32768 i
+*  10.49.0.0/24     169.254.100.1          100             0 65049 i
+*>                  169.254.200.1          100             0 65049 i
+*  10.49.1.0/24     169.254.100.1          100             0 65049 i
+*>                  169.254.200.1          100             0 65049 i
+*  10.49.2.0/24     169.254.100.1          100             0 65049 i
+*>                  169.254.200.1          100             0 65049 i
+*> 172.19.10.0/24   0.0.0.0                  0         32768 i
+*> 172.19.19.0/24   0.0.0.0                  0         32768 i
 
-Total number of prefixes 2
-CGW# sh ip bgp  neighbors
-BGP neighbor is 169.254.100.1, remote AS 64512, local AS 64581, external link
-  BGP version 4, remote router ID 169.254.100.1
-  BGP state = Established, up for 00:00:27
-  Last read 00:00:07, hold time is 30, keepalive interval is 10 seconds
-  Neighbor capabilities:
-    4 Byte AS: advertised and received
-    Route refresh: advertised and received(old & new)
-    Address family IPv4 Unicast: advertised and received
-  Message statistics:
-    Inq depth is 0
-    Outq depth is 0
-                         Sent       Rcvd
-    Opens:                  3          1
-    Notifications:          0          0
-    Updates:                4          2
-    Keepalives:           153        151
-    Route Refresh:          0          0
-    Capability:             0          0
-    Total:                160        154
-  Minimum time between advertisement runs is 30 seconds
-
- For address family: IPv4 Unicast
-  Community attribute sent to this neighbor(both)
-  1 accepted prefixes
-
-  Connections established 2; dropped 1
-  Last reset 00:00:36, due to
-Local host: 169.254.100.2, Local port: 179
-Foreign host: 169.254.100.1, Foreign port: 38895
-Nexthop: 169.254.100.2
-Nexthop global: fe80::5efe:ac10:5104
-Nexthop local: ::
-BGP connection: non shared network
-Read thread: on  Write thread: off
-
-BGP neighbor is 169.254.200.1, remote AS 64512, local AS 64581, external link
-  BGP version 4, remote router ID 169.254.200.1
-  BGP state = Established, up for 00:00:28
-  Last read 00:00:08, hold time is 30, keepalive interval is 10 seconds
-  Neighbor capabilities:
-    4 Byte AS: advertised and received
-    Route refresh: advertised and received(old & new)
-    Address family IPv4 Unicast: advertised and received
-  Message statistics:
-    Inq depth is 0
-    Outq depth is 0
-                         Sent       Rcvd
-    Opens:                  3          1
-    Notifications:          0          0
-    Updates:                2          2
-    Keepalives:           153        151
-    Route Refresh:          0          0
-    Capability:             0          0
-    Total:                158        154
-  Minimum time between advertisement runs is 30 seconds
-
- For address family: IPv4 Unicast
-  Community attribute sent to this neighbor(both)
-  1 accepted prefixes
-
-  Connections established 2; dropped 1
-  Last reset 00:00:36, due to
-Local host: 169.254.200.2, Local port: 179
-Foreign host: 169.254.200.1, Foreign port: 45283
-Nexthop: 169.254.200.2
-Nexthop global: fe80::5efe:ac10:5104
-Nexthop local: ::
-BGP connection: non shared network
-Read thread: on  Write thread: off
-
-CGW#
+Total number of prefixes 5
+ip-172-19-19-10.ap-northeast-2.compute.internal#
 ```
