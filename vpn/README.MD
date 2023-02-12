@@ -271,7 +271,6 @@ sudo chmod -R 777 /etc/quagga/
 sh-4.2$ sudo vtysh
 CGW# sh ip route
 CGW# sh ip bgp
-
 ```
 
 결과 예제
