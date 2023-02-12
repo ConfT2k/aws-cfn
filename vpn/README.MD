@@ -1,6 +1,8 @@
 # Site-to-Site VPN 설정 (StrongSwan+Quagga)
 
+
 ## 1. IPSec 설정 (StrongSwan)
+
 
 ### 1.1 StrongSwan 설치
 
@@ -226,7 +228,10 @@ Security Associations (2 up, 0 connecting):
 [root@CGW ~]#
 ```
 
+
 ## 2. BGP 설정 (Quagga)
+
+
 
 ### 2.1 Quagga 설치
 
