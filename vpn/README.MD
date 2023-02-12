@@ -21,7 +21,7 @@ pTu2VgwOutsideIp=3.120.101.10
 pTu2CgwInsideIp=169.254.200.2
 pTu2VgwIntsideIp=169.254.200.1
 
-# BGP Peer Info
+# BGP Info
 pCgwAsn=64582
 pVgwAsn=65049
 pCgwCidr=172.19.19.0/4
