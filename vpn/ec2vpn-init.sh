@@ -120,7 +120,7 @@ ${pTu2CgwOutsideIp} ${pTu2VgwOutsideIp} : PSK ${pTu2Psk}
 EOF
 
 
-cat <<EOF > ipsec-vti.sh
+cat <<EOF > /etc/strongswan/ipsec-vti.sh
 #!/bin/bash
 #
 # /etc/strongswan/ipsec-vti.sh
