@@ -18,7 +18,7 @@ sudo yum install strongswan -y
 #### a. 변수 설정
 
 ```
-pEc2Eth0Ip=172.19.19.10
+pCgwEth0Ip=172.19.19.10
 
 pTu1Psk=PqAwSeSrWtOyRyD
 pTu1CgwOutsideIp=54.180.213.90
@@ -84,7 +84,7 @@ conn %default
         mobike=no
 conn TU1
         # Customer Gateway
-        left=${pEc2Eth0Ip}
+        left=${pCgwEth0Ip}
         leftid=${pTu1CgwOutsideIp}
         # Virtual Private Gateway
         right=${pTu1VgwOutsideIp}
@@ -93,7 +93,7 @@ conn TU1
         mark=100
 conn TU2
         # Customer Gateway
-        left=${pEc2Eth0Ip}
+        left=${pCgwEth0Ip}
         leftid=${pTu2CgwOutsideIp}
         # Virtual Private Gateway
         right=${pTu2VgwOutsideIp}
