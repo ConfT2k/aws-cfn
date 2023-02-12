@@ -1,5 +1,32 @@
 # Site-to-Site VPN 설정 (StrongSwan+Quagga)
 
+## 0. 변수 설정
+
+
+```
+# CGW(EC2 Instance) Eth0
+pCgwEth0Ip=172.19.19.10
+
+# IPSec Tunnel #1 Info
+pTu1Psk=PqAwSeSrWtOyRyD
+pTu1CgwOutsideIp=54.180.213.90
+pTu1VgwOutsideIp=3.69.86.199
+pTu1CgwInsideIp=169.254.100.2
+pTu1VgwIntsideIp=169.254.100.1
+
+# IPSec Tunnel #2 Info
+pTu2Psk=PqAwSeSrWtOyRyD
+pTu2CgwOutsideIp=54.180.213.90
+pTu2VgwOutsideIp=3.120.101.10
+pTu2CgwInsideIp=169.254.200.2
+pTu2VgwIntsideIp=169.254.200.1
+
+# BGP Peer Info
+pCgwAsn=64582
+pVgwAsn=65049
+pCgwCidr=172.19.19.0/4
+
+```
 
 ## 1. IPSec 설정 (StrongSwan)
 
@@ -13,32 +40,7 @@ sudo yum install strongswan -y
 
 ```
 
-### 1.2 StrongSwan 설정
-
-#### a. 변수 설정
-
-```
-pCgwEth0Ip=172.19.19.10
-
-pTu1Psk=PqAwSeSrWtOyRyD
-pTu1CgwOutsideIp=54.180.213.90
-pTu1VgwOutsideIp=3.69.86.199
-pTu1CgwInsideIp=169.254.100.2
-pTu1VgwIntsideIp=169.254.100.1
-
-pTu2Psk=PqAwSeSrWtOyRyD
-pTu2CgwOutsideIp=54.180.213.90
-pTu2VgwOutsideIp=3.120.101.10
-pTu2CgwInsideIp=169.254.200.2
-pTu2VgwIntsideIp=169.254.200.1
-
-pCgwAsn=64582
-pVgwAsn=65049
-pCgwCidr=172.19.19.0/4
-
-```
-
-#### b. ipsec.conf 설정
+#### a. ipsec.conf 설정
 
 ```
 cat <<EOF > /etc/strongswan/ipsec.conf
@@ -105,7 +107,7 @@ EOF
 
 ```
 
-#### c. ipsec.secrets 설정
+#### b. ipsec.secrets 설정
 
 ```
 cat <<EOF > /etc/strongswan/ipsec.secrets
@@ -118,7 +120,7 @@ EOF
 
 ```
 
-#### d. ipsec-vti.sh 설정
+#### c. ipsec-vti.sh 설정
 
 ```
 cat <<EOF > /etc/strongswan/ipsec-vti.sh
@@ -176,7 +178,7 @@ EOF
 
 ```
 
-#### e. ipsec-vti.sh 파일 모드 변경
+#### d. ipsec-vti.sh 파일 모드 변경
 
 ```
 sudo chmod +x /etc/strongswan/ipsec-vti.sh
