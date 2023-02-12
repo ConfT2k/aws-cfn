@@ -10,6 +10,8 @@ sudo yum install strongswan -y
 
 ## 1.2 StrongSwan 설정
 
+### a. ipsec.conf 설정
+
 ```
 pEc2Eth0Ip=172.19.19.10
 
@@ -31,7 +33,7 @@ pCgwCidr=172.19.19.0/4
 
 ```
 
-### ipsec.conf 설정
+### b. ipsec.conf 설정
 
 ```
 cat <<EOF > /etc/strongswan/ipsec.conf
@@ -98,7 +100,7 @@ EOF
 
 ```
 
-### ipsec.secrets 설정
+### c. ipsec.secrets 설정
 
 ```
 cat <<EOF > /etc/strongswan/ipsec.secrets
@@ -111,7 +113,7 @@ EOF
 
 ```
 
-### ipsec-vti.sh 설정
+### d. ipsec-vti.sh 설정
 
 ```
 cat <<EOF > /etc/strongswan/ipsec-vti.sh
@@ -167,16 +169,29 @@ sysctl -w net.ipv4.conf.eth0.disable_policy=1
 
 EOF
 
+```
+
+### e. ipsec-vti.sh 파일 모드 변경
+
+```
 sudo chmod +x /etc/strongswan/ipsec-vti.sh
+```
 
+### 1.3 IPSec 실행
+```
 
 ```
 
-## BGP 설치
+### 1.4 IPSec 연결 확인
+```
 
 ```
 
-### Quagga 설치
+
+## 2. BGP 설치
+
+
+### 2.1 Quagga 설치
 
 ```
 sudo yum update -y
@@ -185,7 +200,7 @@ sudo yum install quagga-0.99.22.4 -y
 
 ```
 
-### Quagga(BGPD) 설정
+### 2.2 Quagga(BGPD) 설정
 
 ```
 cat <<EOF > /etc/quagga/bgpd.conf
@@ -199,6 +214,14 @@ neighbor 169.254.100.1 remote-as ${pVgwAsn}
 neighbor 169.254.200.1 remote-as ${pVgwAsn}
 network ${pCgwCidr}
 EOF
+```
 
+### 2.3 Quagga(BGPD) 실행
+```
 
+```
 
+### 2.3 BGP 연결 확인
+```
+
+```
