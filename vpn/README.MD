@@ -37,7 +37,6 @@ pCgwCidr=172.19.19.0/4
 sudo yum update -y
 sudo amazon-linux-extras install -y epel
 sudo yum install strongswan -y
-
 ```
 
 #### a. ipsec.conf 설정
@@ -104,7 +103,6 @@ conn TU2
         mark=200
         
 EOF
-
 ```
 
 #### b. ipsec.secrets 설정
@@ -117,7 +115,6 @@ cat <<EOF > /etc/strongswan/ipsec.secrets
 ${pTu1CgwOutsideIp} ${pTu1VgwOutsideIp} : PSK ${pTu1Psk}
 ${pTu2CgwOutsideIp} ${pTu2VgwOutsideIp} : PSK ${pTu2Psk}
 EOF
-
 ```
 
 #### c. ipsec-vti.sh 설정
@@ -175,7 +172,6 @@ sysctl -w net.ipv4.conf.eth0.disable_xfrm=1
 sysctl -w net.ipv4.conf.eth0.disable_policy=1
 
 EOF
-
 ```
 
 #### d. ipsec-vti.sh 파일 모드 변경
@@ -240,8 +236,6 @@ Security Associations (2 up, 0 connecting):
 ```
 sudo yum update -y
 sudo yum install quagga-0.99.22.4 -y
-
-
 ```
 
 ### 2.2 Quagga(BGPD) 설정
@@ -379,5 +373,4 @@ BGP connection: non shared network
 Read thread: on  Write thread: off
 
 CGW#
-
 ```
