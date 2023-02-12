@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#   AWS EC2 인스턴스용 StrongSwan(IPSec) + Quaaga (BGP) 설정 스크립트
+#   AWS EC2 인스턴스용 StrongSwan(IPSec) + Quagga (BGP) 설정 스크립트
 #   - 2023/02/23
 #
 #   사용법
