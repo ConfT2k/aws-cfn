@@ -269,8 +269,8 @@ sudo chmod -R 777 /etc/quagga/
 
 ```
 sh-4.2$ sudo vtysh
-ip-172-19-19-10.ap-northeast-2.compute.internal# sh ip route
-ip-172-19-19-10.ap-northeast-2.compute.internal# sh ip bgp
+CGW# sh ip route
+CGW# sh ip bgp
 
 ```
 
@@ -281,7 +281,7 @@ sh-4.2$ **sudo vtysh**
 Hello, this is Quagga (version 0.99.22.4).
 Copyright 1996-2005 Kunihiro Ishiguro, et al.
 
-ip-172-19-19-10.ap-northeast-2.compute.internal# **sh ip ro**
+ip-172-19-19-10.ap-northeast-2.compute.internal# sh ip ro
 Codes: K - kernel route, C - connected, S - static, R - RIP,
        O - OSPF, I - IS-IS, B - BGP, A - Babel,
        > - selected route, * - FIB route
@@ -295,7 +295,7 @@ C>* 169.254.100.0/30 is directly connected, vti1
 K>* 169.254.169.254/32 is directly connected, eth0
 C>* 169.254.200.0/30 is directly connected, vti2
 C>* 172.19.19.0/28 is directly connected, eth0
-ip-172-19-19-10.ap-northeast-2.compute.internal# **sh ip bgp**
+ip-172-19-19-10.ap-northeast-2.compute.internal# sh ip bgp
 BGP table version is 0, local router ID is 169.254.100.2
 Status codes: s suppressed, d damped, h history, * valid, > best, i - internal,
               r RIB-failure, S Stale, R Removed
