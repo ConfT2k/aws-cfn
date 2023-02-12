@@ -55,6 +55,7 @@ sudo yum update -y
 sudo amazon-linux-extras install -y epel
 sudo yum install strongswan -y
 sudo yum install quagga-0.99.22.4 -y
+sudo systemctl enable --now strongswan
 
 cat <<EOF > /etc/strongswan/ipsec.conf
 #
@@ -182,6 +183,26 @@ sysctl -w net.ipv4.conf.eth0.accept_redirects=0
 sysctl -w net.ipv4.conf.eth0.send_redirects=0
 
 EOF
+
+
+cat <<EOF > /etc/quagga/bgpd.conf
+#
+# /etc/quagga/bgpd.conf
+#
+router bgp ${pCgwAsn}
+bgp router-id ${pTu1CgwInsideIp}
+neighbor ${pTu1VgwInsideIp} remote-as ${pVgwAsn}
+neighbor ${pTu2VgwInsideIp} remote-as ${pVgwAsn}
+network ${pCgwCidr}
+EOF
+
+
+sudo systemctl start zebra
+sudo systemctl enable zebra
+sudo systemctl start bgpd
+sudo systemctl enable bgpd
+sudo chmod -R 777 /etc/quagga/
+
 
 
 sudo strongswan restart
