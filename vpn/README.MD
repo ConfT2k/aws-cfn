@@ -15,7 +15,7 @@ sudo yum install strongswan -y
 
 ### 1.2 StrongSwan 설정
 
-#### a. ipsec.conf 설정
+#### a. 변수 설정
 
 ```
 pEc2Eth0Ip=172.19.19.10
