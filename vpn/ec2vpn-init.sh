@@ -30,7 +30,7 @@ pTu2VgwInsideIp=169.254.200.1
 echo    "=========================================================="
 echo    "              IPSEC/BGP 설정을 시작합니다"
 echo    "----------------------------------------------------------"
-echo    "  1. IPSec Info - VGW의 Tunnel Outside IP 주소를 입력하세요"
+echo    "  1. IPSec Info - VGW(TGW)의 Tunnel 정보를 입력하세요"
 read -p "    - Tunnel #1 Outside IP Addr : " pTu1VgwOutsideIp
 read -p "    - Tunnel #2 Outside IP Addr : " pTu2VgwOutsideIp
 echo    "    - Tunnel #1 Inside IP Addr : "  ${pTu1VgwInsideIp}
