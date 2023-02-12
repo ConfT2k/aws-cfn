@@ -169,6 +169,7 @@ esac
 sysctl -w net.ipv4.ip_forward=1
 sysctl -w net.ipv4.conf.eth0.disable_xfrm=1
 sysctl -w net.ipv4.conf.eth0.disable_policy=1
+# Disable IPv4 ICMP Redirect
 sysctl -w net.ipv4.conf.eth0.accept_redirects=0
 sysctl -w net.ipv4.conf.eth0.send_redirects=0
 
