@@ -1,9 +1,13 @@
 #!/bin/bash
 #
-# AWS EC2 인스턴스용 StrongSwan(IPSec) + Quaaga (BGP) 설정 스크립트
-# - 2023/02/23
+#   AWS EC2 인스턴스용 StrongSwan(IPSec) + Quaaga (BGP) 설정 스크립트
+#   - 2023/02/23
 # 
-# 주) VGW/TGW에서 VPN 터널 설정시 PSK와 Inner IP 주소는 아래의 파라메터를 사용하여 고정 또는 변경 필요
+#   사용법 
+#    1. public subnet에 EC2를 배포하고 나서 EIP를 할당합니다. 
+#    2. VGW/TGW의 S2S VPN 설정이 EC2에 할당된 EIP 주소를 CGW로 등록하고 S2S VPN 터널을 생성합니다.
+#      주) VGW/TGW에서 VPN 터널 설정시 사용자 PSK와 Inner IP 주소는 아래의 파라메터를 사용하여 고정 또는 변경 필요.
+#    3. 생성된 터널 정보에서 2개 터널의 Outside IP를 확인한뒤 스크립트를 실행합니다.
 #
 
 # CGW(EC2 Instance) Eth0
