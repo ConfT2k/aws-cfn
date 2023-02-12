@@ -276,7 +276,7 @@ CGW# sh ip bgp
 
 결과 예제
 ```
-sh-4.2$ udo vtysh
+sh-4.2$ sudo vtysh
 
 Hello, this is Quagga (version 0.99.22.4).
 Copyright 1996-2005 Kunihiro Ishiguro, et al.
